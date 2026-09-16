@@ -17,21 +17,23 @@
 
     ```uv sync```
 
-4. Run estimation with the following command: (can be skipped, example already has estimated submodels)
+4. [Download base year data ](https://psrcwa-my.sharepoint.com/:u:/g/personal/jkolberg_psrc_org/IQBa4dQQIYXERoli0IzbvSH5AaCGXpl2e4YdD83JpQFnFXo?e=CSkfAm) and put the zip file into projects/baseline2023/data. You do not need to unzip it, mazsim will automatically.
+
+5. Run estimation with the following command: (can be skipped, example already has estimated submodels)
     
     ```uv run mazsim estimate -c projects\baseline2023\configs```
 
-5. Run example calibration with the following command: (can be skipped, example already has calibrated submodels)
+6. Run example calibration with the following command: (can be skipped, example already has calibrated submodels)
     
     ```uv run mazsim calibrate -c projects\baseline2023\configs```
 
-6. Run example validation with the following command:
+7. Run example validation with the following command:
 
     ```uv run mazsim validate -c projects\baseline2023\configs```
 
     Validation runs the simulation out the most recent year that's included in the observed_data table. The simulation can then be compared to the observerd data before running the full simulation.
 
-7. Run simulation with the following command:
+8. Run simulation with the following command:
 
     ```uv run mazsim simulate -c projects\baseline2023\configs```
 
