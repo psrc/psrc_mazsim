@@ -1,0 +1,19 @@
+[project]
+name = "psrc-mazsim"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "jkolberg", email = "jkolberg@psrc.org" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "datashader>=0.19.1",
+    "ipykernel>=7.3.0",
+    "mazsim @ git+https://github.com/psrc/mazsim.git@pandana_compile_test",
+    "seaborn>=0.13.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"

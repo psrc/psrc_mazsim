@@ -1,0 +1,44 @@
+# Configuration for the observed-data handling in the "load_data" step.
+# Observed counts are pivoted out of one long table onto the base geography as
+# <column_prefix><type> columns, one per type, using that type's latest year.
+
+table: observed_data
+
+# columns in the table above
+id_column: block_id
+type_column: type
+year_column: year
+value_column: value
+
+# table the observed columns are attached to; must be the base geography in variables.yaml
+target_table: blocks
+
+# each type becomes an "obs_<type>" column and an "observed_<type>_year" injectable
+types:
+  - households
+  - jobs
+  - housing_units
+
+place_observed_data: true
+types_to_place:
+  - housing_units
+  - jobs
+
+# How the place_observed_data step forces each type's per-block counts onto the observed
+# values. Agents are drawn from / returned to the unplaced pool left by the control totals;
+# the lcm group's calibrated sub-models supply the per-block weights over segment_column.
+placement:
+  housing_units:
+    table: housing_units
+    lcm_group: hulcm
+    segment_column: unit_type_id
+    year_built_column: year_built
+    # removing units can leave a block with more agents than spaces, so the excess is unplaced
+    reconcile:
+      agents: households
+      linked_tables:
+        persons: household_id
+  jobs:
+    table: jobs
+    lcm_group: jlcm
+    segment_column: aggr_sector_id
