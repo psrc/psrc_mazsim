@@ -10,7 +10,7 @@ requires-python = ">=3.10"
 dependencies = [
     "datashader>=0.19.1",
     "ipykernel>=7.3.0",
-    "mazsim @ git+https://github.com/psrc/mazsim.git@pandana_compile_test",
+    "mazsim @ git+https://github.com/psrc/mazsim.git",
     "seaborn>=0.13.2",
 ]
 
