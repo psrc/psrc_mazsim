@@ -1,0 +1,83 @@
+modelmanager_version: 0.3.dev0
+
+saved_object:
+    alt_capacity: vacant_hu_spaces
+    alt_filters: null
+    alt_sample_size: 50
+    alternatives: blocks
+    choice_column: block_id
+    chooser_filters: (year_built > 2010) & (unit_type_id == 2)
+    chooser_sample_size: null
+    chooser_size: null
+    choosers: housing_units
+    constrained_choices: true
+    fitted_parameters:
+    - 0.2447992956226394
+    - -0.3866918284885411
+    - -0.3799296119421255
+    - 0.1309545592271716
+    - -0.09685629118019536
+    - 0.40389023328565127
+    - 0.29697883898907823
+    - 0.09126236303746459
+    - 0.4876103076932867
+    - -0.27885410850207737
+    - 0.23522262957599807
+    - 0.7386442176330569
+    - 0.7210765183272178
+    - 0.6667661603915401
+    - 0.11395046733641948
+    max_iter: null
+    mct_intx_ops: null
+    model_expression: major_road_node_sum_800_flat + st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time
+        + st_prop_aggr_sector_id_1_ave_1600_flat + st_prop_aggr_sector_id_2_ave_1600_flat
+        + st_prop_aggr_sector_id_3_ave_1600_flat + st_prop_aggr_sector_id_4_ave_1600_flat
+        + st_prop_aggr_sector_id_5_ave_1600_flat + st_ln_res_value_ave_1600_flat +
+        st_ln_res_rent_ave_800_flat + st_total_households_sum_2000_flat + st_is_transit_stop_sum_1600_flat
+        + sum_sf_built_prev_10_years_ave_1600_flat + sum_mf_built_prev_10_years_ave_800_flat
+        + st_prop_children_0_ave_400_flat + st_sum_income_ave_1600_flat - 1
+    name: hulcm2
+    out_alt_filters: vacant_hu_spaces > 0
+    out_alternatives: null
+    out_chooser_filters: (block_id == -1) & (year_built > 2010) & (unit_type_id ==
+        2)
+    out_choosers: null
+    out_column: null
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \      \n===================================================================\n\
+        Dep. Var.:                chosen   No. Observations:            554\nModel:\
+        \         Multinomial Logit   Df Residuals:                539\nMethod:  \
+        \     Maximum Likelihood   Df Model:                     15\nDate:       \
+        \          2026-09-17   Pseudo R-squ.:             0.359\nTime:          \
+        \            12:12   Pseudo R-bar-squ.:         0.352\nAIC:              \
+        \     2,807.978   Log-Likelihood:       -1,388.989\nBIC:                 \
+        \  2,872.736   LL-Null:              -2,167.261\n============================================================================================================================\n\
+        \                                                                        \
+        \     coef   std err         z     P>|z|   Conf. Int.\n----------------------------------------------------------------------------------------------------------------------------\n\
+        major_road_node_sum_800_flat                                             \
+        \  0.2448     0.056     4.380     0.000             \nst_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time\
+        \   -0.3867     0.192    -2.010     0.044             \nst_prop_aggr_sector_id_1_ave_1600_flat\
+        \                                    -0.3799     0.090    -4.209     0.000\
+        \             \nst_prop_aggr_sector_id_2_ave_1600_flat                   \
+        \                  0.1310     0.067     1.966     0.049             \nst_prop_aggr_sector_id_3_ave_1600_flat\
+        \                                    -0.0969     0.073    -1.319     0.187\
+        \             \nst_prop_aggr_sector_id_4_ave_1600_flat                   \
+        \                  0.4039     0.088     4.580     0.000             \nst_prop_aggr_sector_id_5_ave_1600_flat\
+        \                                     0.2970     0.049     6.106     0.000\
+        \             \nst_ln_res_value_ave_1600_flat                            \
+        \                  0.0913     0.126     0.725     0.469             \nst_ln_res_rent_ave_800_flat\
+        \                                                0.4876     0.118     4.142\
+        \     0.000             \nst_total_households_sum_2000_flat              \
+        \                           -0.2789     0.160    -1.744     0.081        \
+        \     \nst_is_transit_stop_sum_1600_flat                                 \
+        \          0.2352     0.052     4.512     0.000             \nsum_sf_built_prev_10_years_ave_1600_flat\
+        \                                   0.7386     0.118     6.284     0.000 \
+        \            \nsum_mf_built_prev_10_years_ave_800_flat                   \
+        \                 0.7211     0.066    10.925     0.000             \nst_prop_children_0_ave_400_flat\
+        \                                            0.6668     0.083     7.997  \
+        \   0.000             \nst_sum_income_ave_1600_flat                      \
+        \                          0.1140     0.538     0.212     0.832          \
+        \   \n============================================================================================================================"
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.3.dev0

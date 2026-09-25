@@ -1,0 +1,62 @@
+modelmanager_version: 0.3.dev0
+
+saved_object:
+    alt_capacity: vacant_housing_units
+    alt_filters: null
+    alt_sample_size: 100
+    alternatives: blocks
+    choice_column: block_id
+    chooser_filters: (recent_mover == 1) & (income_quartile == 2)
+    chooser_sample_size: null
+    chooser_size: null
+    choosers: households
+    constrained_choices: true
+    fitted_parameters:
+    - -0.018385575029104147
+    - -0.43266349007305677
+    - -0.14660903429993924
+    - -0.13996229785766434
+    - 2.061527666555814
+    - 0.18367549018693644
+    - -0.025505036649222754
+    - 0.45942974082588944
+    max_iter: null
+    mct_intx_ops: null
+    model_expression: st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time
+        + st_ln_res_value_ave_800_flat + st_ln_res_rent_ave_800_flat + st_is_transit_stop_sum_1600_flat
+        + st_sum_income_ave_1600_flat + st_sum_built_after_2010_ave_1600_flat + st_block_groups_prop_children_0
+        + st_ln_block_groups_density_housing_units - 1
+    name: hlcm3
+    out_alt_filters: vacant_housing_units > 0
+    out_alternatives: null
+    out_chooser_filters: (block_id == -1) & (income_quartile == 2)
+    out_choosers: null
+    out_column: null
+    summary_table: "                  CHOICEMODELS ESTIMATION RESULTS            \
+        \       \n====================================================================\n\
+        Dep. Var.:                chosen   No. Observations:         214,555\nModel:\
+        \         Multinomial Logit   Df Residuals:             214,547\nMethod: \
+        \      Maximum Likelihood   Df Model:                       8\nDate:     \
+        \            2026-09-17   Pseudo R-squ.:              0.086\nTime:       \
+        \               10:18   Pseudo R-bar-squ.:          0.086\nAIC:          \
+        \     1,805,813.297   Log-Likelihood:      -902,898.648\nBIC:            \
+        \   1,805,895.507   LL-Null:             -988,062.289\n=============================================================================================================================\n\
+        \                                                                        \
+        \     coef   std err          z     P>|z|   Conf. Int.\n-----------------------------------------------------------------------------------------------------------------------------\n\
+        st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time  \
+        \ -0.0184     0.005     -3.863     0.000             \nst_ln_res_value_ave_800_flat\
+        \                                              -0.4327     0.002   -191.875\
+        \     0.000             \nst_ln_res_rent_ave_800_flat                    \
+        \                           -0.1466     0.003    -43.207     0.000       \
+        \      \nst_is_transit_stop_sum_1600_flat                                \
+        \          -0.1400     0.002    -57.936     0.000             \nst_sum_income_ave_1600_flat\
+        \                                                2.0615     0.009    229.380\
+        \     0.000             \nst_sum_built_after_2010_ave_1600_flat          \
+        \                            0.1837     0.003     59.324     0.000       \
+        \      \nst_block_groups_prop_children_0                                 \
+        \          -0.0255     0.003     -8.044     0.000             \nst_ln_block_groups_density_housing_units\
+        \                                   0.4594     0.003    155.727     0.000\
+        \             \n============================================================================================================================="
+    tags: []
+    template: LargeMultinomialLogitStep
+    template_version: 0.3.dev0
