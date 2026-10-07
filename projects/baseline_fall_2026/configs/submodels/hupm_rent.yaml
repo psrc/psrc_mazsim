@@ -1,104 +1,85 @@
-modelmanager_version: 0.3.dev0
+modelmanager_version: '0.3'
 
 saved_object:
     filters: (res_rent > 0) & (rent_impute == False)
     fitted_parameters:
-    - 1852.5367930680773
-    - 0.31176265545002213
-    - -7.581972146440026
-    - -5.47871787245298
-    - -3.7249216800530967
-    - 8.487507672242858
-    - -0.12902796019517865
-    - 9.982809265524516
-    - -41.03193877995529
-    - 516.8143994742668
-    - -25.447152535005742
-    - 2.0008259901733436
-    - 12.075151293792768
-    - 115.58234117889437
-    - -5.521913141101945
-    - -10.156133746750347
-    - -18.2065911412144
+    - 1865.7889159362378
+    - 608.4588186338823
+    - 132.2623188547451
+    - -27.10978166900115
+    - -90.62103093793529
+    - -18.167329126134966
+    - -18.739491011704075
+    - -15.158838282561689
+    - -36.21981935377772
+    - 14.122597589144014
+    - -20.68904314914792
+    - -21.475560626708386
+    - 17.267353090302713
     model:
         fit_filters: (res_rent > 0) & (rent_impute == False)
         fit_parameters:
             Coefficient:
-                Intercept: 1852.5367930680773
-                major_road_node_sum_800_flat: 0.31176265545002213
-                st_block_groups_median_income: 115.58234117889437
-                st_block_groups_median_year_built: 2.0008259901733436
-                st_is_transit_stop_sum_800_flat: 12.075151293792768
-                st_ln_res_rent_ave_800_flat: 516.8143994742668
-                st_ln_res_value_ave_800_flat: -41.03193877995529
-                st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time: -7.581972146440026
-                st_prop_aggr_sector_id_1_ave_1600_flat: -5.47871787245298
-                st_prop_aggr_sector_id_2_ave_1600_flat: -3.7249216800530967
-                st_prop_aggr_sector_id_3_ave_1600_flat: 8.487507672242858
-                st_prop_aggr_sector_id_4_ave_1600_flat: -0.12902796019517865
-                st_prop_aggr_sector_id_5_ave_1600_flat: 9.982809265524516
-                st_prop_children_0_ave_400_flat: -10.156133746750347
-                st_sum_built_after_2010_ave_1600_flat: -5.521913141101945
-                st_sum_income_ave_1600_flat: -18.2065911412144
-                st_total_households_sum_2000_linear: -25.447152535005742
+                Intercept: 1865.7889159362378
+                st_block_groups_median_income: 132.2623188547451
+                st_block_groups_prop_worker_aggr_occ_1: -36.21981935377772
+                st_block_groups_prop_worker_aggr_sector_1: -15.158838282561689
+                st_block_groups_prop_worker_aggr_sector_5: -18.167329126134966
+                st_ln_block_groups_density_jobs: 14.122597589144014
+                st_ln_res_rent_ave_1600_flat: -90.62103093793529
+                st_ln_res_rent_ave_800_flat: 608.4588186338823
+                st_ln_res_value_ave_1600_flat: -27.10978166900115
+                st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time: -20.68904314914792
+                st_mean_year_built: 17.267353090302713
+                st_sum_middle_ave_3200_flat: -18.739491011704075
+                st_sum_sf_built_prev_10_years_ave_3200_flat: -21.475560626708386
             Std. Error:
-                Intercept: 4.3934268393167155
-                major_road_node_sum_800_flat: 2.943066448297451
-                st_block_groups_median_income: 3.9192576621195054
-                st_block_groups_median_year_built: 3.069332720867529
-                st_is_transit_stop_sum_800_flat: 2.3811980850442787
-                st_ln_res_rent_ave_800_flat: 3.2994220940722516
-                st_ln_res_value_ave_800_flat: 3.6317458926900685
-                st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time: 4.268461096562477
-                st_prop_aggr_sector_id_1_ave_1600_flat: 2.5799499097540237
-                st_prop_aggr_sector_id_2_ave_1600_flat: 2.8130203049006144
-                st_prop_aggr_sector_id_3_ave_1600_flat: 2.7828439032444736
-                st_prop_aggr_sector_id_4_ave_1600_flat: 3.62973645091616
-                st_prop_aggr_sector_id_5_ave_1600_flat: 2.6020202916844917
-                st_prop_children_0_ave_400_flat: 4.358346497840414
-                st_sum_built_after_2010_ave_1600_flat: 3.968589470444538
-                st_sum_income_ave_1600_flat: 15.11069246280582
-                st_total_households_sum_2000_linear: 6.362400078653305
+                Intercept: 2.46745662734126
+                st_block_groups_median_income: 4.223028870154645
+                st_block_groups_prop_worker_aggr_occ_1: 4.5128437280482405
+                st_block_groups_prop_worker_aggr_sector_1: 2.9503114924600427
+                st_block_groups_prop_worker_aggr_sector_5: 2.6769162348986923
+                st_ln_block_groups_density_jobs: 2.9010259229452346
+                st_ln_res_rent_ave_1600_flat: 8.401587602065918
+                st_ln_res_rent_ave_800_flat: 7.725414842537547
+                st_ln_res_value_ave_1600_flat: 4.365658222132875
+                st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time: 4.085340444465421
+                st_mean_year_built: 2.7314464173858544
+                st_sum_middle_ave_3200_flat: 3.246025508739641
+                st_sum_sf_built_prev_10_years_ave_3200_flat: 3.1687902408710507
             T-Score:
-                Intercept: 421.6610087801511
-                major_road_node_sum_800_flat: 0.10593123224600492
-                st_block_groups_median_income: 29.49087586050372
-                st_block_groups_median_year_built: 0.6518765386920392
-                st_is_transit_stop_sum_800_flat: 5.071040233752006
-                st_ln_res_rent_ave_800_flat: 156.63785497550512
-                st_ln_res_value_ave_800_flat: -11.298130428823187
-                st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time: -1.7762776735967023
-                st_prop_aggr_sector_id_1_ave_1600_flat: -2.1235752879308145
-                st_prop_aggr_sector_id_2_ave_1600_flat: -1.3241716291787309
-                st_prop_aggr_sector_id_3_ave_1600_flat: 3.0499402651896528
-                st_prop_aggr_sector_id_4_ave_1600_flat: -0.035547473470866314
-                st_prop_aggr_sector_id_5_ave_1600_flat: 3.836560882106673
-                st_prop_children_0_ave_400_flat: -2.3302722148830455
-                st_sum_built_after_2010_ave_1600_flat: -1.3914044731070188
-                st_sum_income_ave_1600_flat: -1.2048813240047715
-                st_total_households_sum_2000_linear: -3.9996152741768487
-        fit_rsquared: 0.7089283626756588
-        fit_rsquared_adj: 0.7087189303692691
+                Intercept: 756.1587487544481
+                st_block_groups_median_income: 31.319302548339373
+                st_block_groups_prop_worker_aggr_occ_1: -8.02594140999481
+                st_block_groups_prop_worker_aggr_sector_1: -5.138046718559156
+                st_block_groups_prop_worker_aggr_sector_5: -6.786663284151103
+                st_ln_block_groups_density_jobs: 4.86813905296172
+                st_ln_res_rent_ave_1600_flat: -10.78617937824655
+                st_ln_res_rent_ave_800_flat: 78.76066606593044
+                st_ln_res_value_ave_1600_flat: -6.209781043225245
+                st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time: -5.064215193418266
+                st_mean_year_built: 6.3216883847308
+                st_sum_middle_ave_3200_flat: -5.77305722374936
+                st_sum_sf_built_prev_10_years_ave_3200_flat: -6.777211173436678
+        fit_rsquared: 0.7165556840679725
+        fit_rsquared_adj: 0.7164033424282008
         fitted: true
-        model_expression: res_rent ~ major_road_node_sum_800_flat + st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time
-            + st_prop_aggr_sector_id_1_ave_1600_flat + st_prop_aggr_sector_id_2_ave_1600_flat
-            + st_prop_aggr_sector_id_3_ave_1600_flat + st_prop_aggr_sector_id_4_ave_1600_flat
-            + st_prop_aggr_sector_id_5_ave_1600_flat + st_ln_res_value_ave_800_flat
-            + st_ln_res_rent_ave_800_flat + st_total_households_sum_2000_linear +
-            st_block_groups_median_year_built + st_is_transit_stop_sum_800_flat +
-            st_block_groups_median_income + st_sum_built_after_2010_ave_1600_flat
-            + st_prop_children_0_ave_400_flat + st_sum_income_ave_1600_flat + 1
+        model_expression: res_rent ~ st_ln_res_rent_ave_800_flat + st_block_groups_median_income
+            + st_ln_res_value_ave_1600_flat + st_ln_res_rent_ave_1600_flat + st_block_groups_prop_worker_aggr_sector_5
+            + st_sum_middle_ave_3200_flat + st_block_groups_prop_worker_aggr_sector_1
+            + st_block_groups_prop_worker_aggr_occ_1 + st_ln_block_groups_density_jobs
+            + st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time
+            + st_sum_sf_built_prev_10_years_ave_3200_flat + st_mean_year_built + 1
         model_type: regression
         name: RegressionModel
         predict_filters: all_blocks == 1
         ytransform: null
-    model_expression: res_rent ~ major_road_node_sum_800_flat + st_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time
-        + st_prop_aggr_sector_id_1_ave_1600_flat + st_prop_aggr_sector_id_2_ave_1600_flat
-        + st_prop_aggr_sector_id_3_ave_1600_flat + st_prop_aggr_sector_id_4_ave_1600_flat
-        + st_prop_aggr_sector_id_5_ave_1600_flat + st_ln_res_value_ave_800_flat +
-        st_ln_res_rent_ave_800_flat + st_total_households_sum_2000_linear + st_block_groups_median_year_built
-        + st_is_transit_stop_sum_800_flat + st_block_groups_median_income + st_sum_built_after_2010_ave_1600_flat
-        + st_prop_children_0_ave_400_flat + st_sum_income_ave_1600_flat + 1
+    model_expression: res_rent ~ st_ln_res_rent_ave_800_flat + st_block_groups_median_income
+        + st_ln_res_value_ave_1600_flat + st_ln_res_rent_ave_1600_flat + st_block_groups_prop_worker_aggr_sector_5
+        + st_sum_middle_ave_3200_flat + st_block_groups_prop_worker_aggr_sector_1
+        + st_block_groups_prop_worker_aggr_occ_1 + st_ln_block_groups_density_jobs
+        + st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time
+        + st_sum_sf_built_prev_10_years_ave_3200_flat + st_mean_year_built + 1
     name: hupm_rent
     out_column: res_rent
     out_filters: all_blocks == 1
@@ -106,57 +87,53 @@ saved_object:
     out_transform: null
     summary_table: "                            OLS Regression Results           \
         \                 \n==============================================================================\n\
-        Dep. Variable:               res_rent   R-squared:                       0.709\n\
-        Model:                            OLS   Adj. R-squared:                  0.709\n\
-        Method:                 Least Squares   F-statistic:                     3385.\n\
-        Date:                Thu, 17 Sep 2026   Prob (F-statistic):              \
-        \ 0.00\nTime:                        07:57:54   Log-Likelihood:          \
-        \  -1.6108e+05\nNo. Observations:               22254   AIC:             \
-        \            3.222e+05\nDf Residuals:                   22237   BIC:     \
-        \                    3.223e+05\nDf Model:                          16    \
+        Dep. Variable:               res_rent   R-squared:                       0.717\n\
+        Model:                            OLS   Adj. R-squared:                  0.716\n\
+        Method:                 Least Squares   F-statistic:                     4704.\n\
+        Date:                Tue, 29 Sep 2026   Prob (F-statistic):              \
+        \ 0.00\nTime:                        22:04:24   Log-Likelihood:          \
+        \  -1.6208e+05\nNo. Observations:               22340   AIC:             \
+        \            3.242e+05\nDf Residuals:                   22327   BIC:     \
+        \                    3.243e+05\nDf Model:                          12    \
         \                                     \nCovariance Type:            nonrobust\
-        \                                         \n===========================================================================================================================================\n\
+        \                                         \n=================================================================================================================================================\n\
         \                                                                        \
-        \      coef    std err          t      P>|t|      [0.025      0.975]\n-------------------------------------------------------------------------------------------------------------------------------------------\n\
-        Intercept                                                                1852.5368\
-        \      4.393    421.661      0.000    1843.925    1861.148\nmajor_road_node_sum_800_flat\
-        \                                                0.3118      2.943      0.106\
-        \      0.916      -5.457       6.080\nst_ln_zones_total_jobs_15_minutes_am_single_vehicle_to_work_travel_time\
-        \    -7.5820      4.268     -1.776      0.076     -15.948       0.785\nst_prop_aggr_sector_id_1_ave_1600_flat\
-        \                                     -5.4787      2.580     -2.124      0.034\
-        \     -10.536      -0.422\nst_prop_aggr_sector_id_2_ave_1600_flat        \
-        \                             -3.7249      2.813     -1.324      0.185   \
-        \   -9.239       1.789\nst_prop_aggr_sector_id_3_ave_1600_flat           \
-        \                           8.4875      2.783      3.050      0.002      \
-        \ 3.033      13.942\nst_prop_aggr_sector_id_4_ave_1600_flat              \
-        \                       -0.1290      3.630     -0.036      0.972      -7.244\
-        \       6.986\nst_prop_aggr_sector_id_5_ave_1600_flat                    \
-        \                  9.9828      2.602      3.837      0.000       4.883   \
-        \   15.083\nst_ln_res_value_ave_800_flat                                 \
-        \             -41.0319      3.632    -11.298      0.000     -48.150     -33.913\n\
+        \            coef    std err          t      P>|t|      [0.025      0.975]\n\
+        -------------------------------------------------------------------------------------------------------------------------------------------------\n\
+        Intercept                                                                \
+        \      1865.7889      2.467    756.159      0.000    1860.953    1870.625\n\
         st_ln_res_rent_ave_800_flat                                              \
-        \ 516.8144      3.299    156.638      0.000     510.347     523.281\nst_total_households_sum_2000_linear\
-        \                                       -25.4472      6.362     -4.000   \
-        \   0.000     -37.918     -12.976\nst_block_groups_median_year_built     \
-        \                                      2.0008      3.069      0.652      0.514\
-        \      -4.015       8.017\nst_is_transit_stop_sum_800_flat               \
-        \                             12.0752      2.381      5.071      0.000   \
-        \    7.408      16.742\nst_block_groups_median_income                    \
-        \                         115.5823      3.919     29.491      0.000     107.900\
-        \     123.264\nst_sum_built_after_2010_ave_1600_flat                     \
-        \                 -5.5219      3.969     -1.391      0.164     -13.301   \
-        \    2.257\nst_prop_children_0_ave_400_flat                              \
-        \             -10.1561      4.358     -2.330      0.020     -18.699      -1.613\n\
-        st_sum_income_ave_1600_flat                                              \
-        \ -18.2066     15.111     -1.205      0.228     -47.825      11.411\n==============================================================================\n\
-        Omnibus:                     7066.950   Durbin-Watson:                   2.001\n\
-        Prob(Omnibus):                  0.000   Jarque-Bera (JB):           206104.274\n\
-        Skew:                           0.921   Prob(JB):                        \
-        \ 0.00\nKurtosis:                      17.795   Cond. No.                \
-        \         13.5\n==============================================================================\n\
+        \       608.4588      7.725     78.761      0.000     593.316     623.601\n\
+        st_block_groups_median_income                                            \
+        \       132.2623      4.223     31.319      0.000     123.985     140.540\n\
+        st_ln_res_value_ave_1600_flat                                            \
+        \       -27.1098      4.366     -6.210      0.000     -35.667     -18.553\n\
+        st_ln_res_rent_ave_1600_flat                                             \
+        \       -90.6210      8.402    -10.786      0.000    -107.089     -74.153\n\
+        st_block_groups_prop_worker_aggr_sector_5                                \
+        \       -18.1673      2.677     -6.787      0.000     -23.414     -12.920\n\
+        st_sum_middle_ave_3200_flat                                              \
+        \       -18.7395      3.246     -5.773      0.000     -25.102     -12.377\n\
+        st_block_groups_prop_worker_aggr_sector_1                                \
+        \       -15.1588      2.950     -5.138      0.000     -20.942      -9.376\n\
+        st_block_groups_prop_worker_aggr_occ_1                                   \
+        \       -36.2198      4.513     -8.026      0.000     -45.065     -27.374\n\
+        st_ln_block_groups_density_jobs                                          \
+        \        14.1226      2.901      4.868      0.000       8.436      19.809\n\
+        st_ln_zones_total_households_30_minutes_am_single_vehicle_to_work_travel_time\
+        \   -20.6890      4.085     -5.064      0.000     -28.697     -12.681\nst_sum_sf_built_prev_10_years_ave_3200_flat\
+        \                                     -21.4756      3.169     -6.777     \
+        \ 0.000     -27.687     -15.265\nst_mean_year_built                      \
+        \                                         17.2674      2.731      6.322  \
+        \    0.000      11.914      22.621\n==============================================================================\n\
+        Omnibus:                     8964.886   Durbin-Watson:                   1.519\n\
+        Prob(Omnibus):                  0.000   Jarque-Bera (JB):           242248.511\n\
+        Skew:                           1.348   Prob(JB):                        \
+        \ 0.00\nKurtosis:                      18.905   Cond. No.                \
+        \         9.38\n==============================================================================\n\
         \nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors\
         \ is correctly specified."
     tables: blocks
     tags: []
     template: OLSRegressionStep
-    template_version: 0.3.dev0
+    template_version: '0.3'

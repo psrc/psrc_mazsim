@@ -10,9 +10,12 @@ requires-python = ">=3.10"
 dependencies = [
     "datashader>=0.19.1",
     "ipykernel>=7.3.0",
-    "mazsim @ git+https://github.com/psrc/mazsim.git",
+    "mazsim",
     "seaborn>=0.13.2",
 ]
+
+[tool.uv.sources]
+mazsim = { path = "../mazsim", editable = true }
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]

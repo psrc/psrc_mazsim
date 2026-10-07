@@ -152,7 +152,8 @@ class Blocks(pa.DataFrameModel):
     Census block land use/parcel data.
 
     block_id: unique 15-digit census block ID
-    zone_id: MAZ the block belongs to
+    maz_id: unique MAZ ID
+    zone_id: TAZ the block belongs to
     x, y: block centroid coordinates in epsg: 4326
     res_rent: monthly residential rent
     res_value: residential property value
@@ -162,6 +163,7 @@ class Blocks(pa.DataFrameModel):
     """
 
     block_id: int = pa.Field(unique=True, ge=0)
+    maz_id: int = pa.Field(unique=True, ge=0)
     zone_id: int = pa.Field(ge=0)
     x: float = pa.Field()
     y: float = pa.Field()
@@ -181,7 +183,6 @@ class Households(pa.DataFrameModel):
     Synthetic households.
 
     household_id: unique household ID
-    puma_id, tract_id, block_id: geographies the household resides in
     hh_id: source household ID from the synthesis process
     persons: number of people in the household
     building_type: structure type of the household's building, see BuildingType
@@ -200,9 +201,7 @@ class Households(pa.DataFrameModel):
     """
 
     household_id: int = pa.Field(unique=True, ge=0)
-    puma_id: int = pa.Field(ge=0)
-    tract_id: int = pa.Field(ge=0)
-    block_id: int = pa.Field(ge=0)
+    maz_id: int = pa.Field(ge=0)
     hh_id: int = pa.Field(ge=0)
     persons: int = pa.Field(ge=0)
     building_type: int = pa.Field(isin=BuildingType)
@@ -236,7 +235,7 @@ class Jobs(pa.DataFrameModel):
 
     job_id: int = pa.Field(unique=True, ge=0)
     sector_id: int = pa.Field(isin=SectorId)
-    block_id: int = pa.Field(ge=0)
+    maz_id: int = pa.Field(ge=0)
 
     class Config:
         strict = "filter"
@@ -248,13 +247,13 @@ class HousingUnits(pa.DataFrameModel):
     Synthetic housing units.
 
     unit_id: unique housing unit ID
-    block_id: block the unit is located in
+    maz_id: MAZ the unit is located in
     year_built: year the unit's building was built
     unit_type_id: tenure/structure grouping, see UnitTypeId
     """
 
     unit_id: int = pa.Field(unique=True, ge=0)
-    block_id: int = pa.Field(ge=0)
+    maz_id: int = pa.Field(ge=0)
     year_built: int = pa.Field()
     unit_type_id: float = pa.Field(isin=UnitTypeId)
 
@@ -267,7 +266,6 @@ class Persons(pa.DataFrameModel):
     """
     Synthetic persons.
 
-    puma_id, tract_id, block_id: geographies the person resides in
     hh_id: source household ID from the synthesis process
     household_id: household ID of the person
     age: person age
@@ -283,9 +281,6 @@ class Persons(pa.DataFrameModel):
     per_num: person number within the household
     """
 
-    puma_id: int = pa.Field(ge=0)
-    tract_id: int = pa.Field(ge=0)
-    block_id: int = pa.Field(ge=0)
     hh_id: int = pa.Field(ge=0)
     household_id: int = pa.Field(ge=0)
     age: int = pa.Field(ge=0)
@@ -318,7 +313,20 @@ class TransitStops(pa.DataFrameModel):
 
     x: float = pa.Field()
     y: float = pa.Field()
-    hct: int = pa.Field()
+
+    class Config:
+        strict = "filter"
+        coerce = True
+
+class UrbanCenters(pa.DataFrameModel):
+    """
+    Urban center locations.
+
+    x, y: center coordinates
+    """
+
+    x: float = pa.Field()
+    y: float = pa.Field()
 
     class Config:
         strict = "filter"
@@ -396,7 +404,6 @@ class HouseholdCalibTargets(pa.DataFrameModel):
     income_quartile: int = pa.Field(isin=IncomeQuartile)
     households_2010: float = pa.Field(ge=0)
     households_2020: float = pa.Field(ge=0)
-    households_target: float = pa.Field()
 
     class Config:
         strict = "filter"
@@ -417,7 +424,6 @@ class HousingUnitCalibTargets(pa.DataFrameModel):
     unit_type_id: float = pa.Field(isin=UnitTypeId)
     units_2010: float = pa.Field(ge=0)
     units_2020: float = pa.Field(ge=0)
-    units_target: float = pa.Field()
 
     class Config:
         strict = "filter"
@@ -445,12 +451,12 @@ class BlockCapacity(pa.DataFrameModel):
     """
     Development capacity by block.
 
-    block_id: unique block ID
+    maz_id: unique MAZ ID
     job_capacity: maximum number of jobs the block can hold
     housing_unit_capacity: maximum number of housing units the block can hold
     """
 
-    block_id: int = pa.Field(unique=True, ge=0)
+    maz_id: int = pa.Field(unique=True, ge=0)
     job_capacity: int = pa.Field(ge=0)
     housing_unit_capacity: int = pa.Field(ge=0)
 
@@ -463,13 +469,13 @@ class ObservedData(pa.DataFrameModel):
     """
     Observed counts by block, year, and type, used for validation/comparison.
 
-    block_id: block the observation applies to
+    maz_id: MAZ the observation applies to
     year: year the observation applies to
     type: quantity observed (households, jobs, housing_units)
     value: observed count
     """
 
-    block_id: int = pa.Field(ge=0)
+    maz_id: int = pa.Field(ge=0)
     year: int = pa.Field()
     type: str = pa.Field(isin=["households", "jobs", "housing_units"])
     value: int = pa.Field(ge=0)
@@ -523,6 +529,7 @@ TABLE_MODELS: dict[str, type[pa.DataFrameModel]] = {
     "housing_units": HousingUnits,
     "persons": Persons,
     "transit_stops": TransitStops,
+    "urban_centers": UrbanCenters,
     "nodes": Nodes,
     "edges": Edges,
     "job_calib_targets": JobCalibTargets,
@@ -537,11 +544,11 @@ TABLE_MODELS: dict[str, type[pa.DataFrameModel]] = {
 
 # Maps each table to the column(s) orca should set as its index, after validation.
 TABLE_INDEXES: dict[str, str | list[str]] = {
-    "blocks": "block_id",
+    "blocks": "maz_id",
     "households": "household_id",
     "jobs": "job_id",
     "housing_units": "unit_id",
     "nodes": "id",
     "travel_data": ["from_zone_id", "to_zone_id"],
-    "block_capacity": "block_id"
+    "block_capacity": "maz_id"
 }
