@@ -1,8 +1,8 @@
 data_sources:
 # baseline data sources, not required for scenarios
-  - blocks: blocks_2020_2026-10-06.csv
+  - blocks: blocks_2020_2026-10-07.csv
   - households: synthetic_households_2020_2026-10-07.csv
-  - jobs: jobs_2020_2026-10-06.csv
+  - jobs: jobs_2020_2026-10-08.csv
   - housing_units: synthetic_housing_units_2020_2026-10-07.csv
   - persons: synthetic_persons_2020_2026-10-07.csv
   - transit_stops: transit_stops_2026-09-25.csv
@@ -11,7 +11,7 @@ data_sources:
   - edges: edges_2026-09-25.csv
 #  - job_calib_targets: job_calib_targets.csv
   - travel_data: travel_data.csv
-  - observed_data: observed_data_2026-09-28.csv
+  - observed_data: observed_data_2026-10-08.csv
 
 # history year data, used for calibration
   - history_year_blocks: blocks_2010_2026-10-06.csv
@@ -23,7 +23,7 @@ data_sources:
   - housing_unit_calib_targets: housing_unit_calib_targets_2026-10-06.csv
 
 # scenario data sources
-  - block_capacity: block_capacity_2026-09-28.csv
+  - block_capacity: block_capacity_2026-10-08.csv
   - annual_household_control_totals: luvit_household_control_totals.csv
   - annual_job_control_totals: luvit_job_control_totals.csv
 
